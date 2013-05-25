@@ -12,6 +12,10 @@
     <%= link_to "Rewsly", root_path %>
   </h1>
 </header>
+<% if notice %>
+    <p><%= notice %></p>
+<% end %>
+
 <%= form_tag 'search', method: :get do %>
     <%= search_field_tag :q, "", placeholder: 'Search' %>
     <%= submit_tag "Search" %>

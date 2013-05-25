@@ -23,6 +23,12 @@ class StoriesController < ApplicationController
     @story = Story.find(params[:id])
   end
 
+  def destroy
+    @story = Story.find(params[:id])
+    @story.destroy
+    redirect_to root_path, notice: "#{@story.title} has been deleted"
+  end
+
   def search
     query = params[:q]
     @stories = Story.search_for query
