@@ -1,0 +1,14 @@
+- Create a User model, but no views or controllers. 
+  - Users can have many submissions (of stories)
+- Users should have a name and email address.
+  - Validate email addresses are unique 
+
+- Add categories 
+  - When a story is entered take a list of categories
+- Add a way to see all stories in a given category.
+
+- Add a Source model to track what source news stories come from. 
+  - This should be provided when submitting a story via a drop down menu.
+  (Doesn't make sense. Let's make this dynamic. You submit a link, and it adds the site to the "sources" table)
+
+- Create a Comments model. Users create comments on stories.

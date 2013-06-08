@@ -11,15 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130525164853) do
+ActiveRecord::Schema.define(version: 20130608024644) do
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "stories", force: true do |t|
     t.string   "title"
     t.string   "link"
     t.integer  "upvotes",    default: 0
-    t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "tags", force: true do |t|
+    t.integer  "story_id"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tags", ["category_id"], name: "index_tags_on_category_id"
+  add_index "tags", ["story_id"], name: "index_tags_on_story_id"
 
 end

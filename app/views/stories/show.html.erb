@@ -1,6 +1,6 @@
 <h1><%= link_to @story.title, @story.link %></h1>
 <p>Current Upvotes: <%= @story.upvotes %></p>
-<p>Category: <%= @story.upvotes %></p>
+<p>Categories: <%= convert_to_tags_links @story.tag_list %></p>
 
 Comments:
 <%= form_tag "" do %>

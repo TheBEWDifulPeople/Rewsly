@@ -8,7 +8,7 @@ class StoriesController < ApplicationController
   end
 
   def create
-    story_params = params.require(:story).permit(:title, :link, :category)
+    story_params = params.require(:story).permit(:title, :link, :category, :tag_list)
     @story = Story.new(story_params)
 
     if @story.save
